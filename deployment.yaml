@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: verdant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: verdant
+  template:
+    metadata:
+      labels:
+        app: verdant
+    spec:
+      containers:
+      - name: verdant
+        image: dignoscarlito/verdant:latest
+        ports:
+        - containerPort: 5000
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 10
