@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Dark is the default. .theme-dark forces dark inside any element (used by terminals). */
+:root,
+:root[data-theme="dark"],
+.theme-dark {
+  --c-bg: #02191b;
+  --c-text: #e9f8e7;
+  --c-muted: #c0e6b9;
+  --c-accent: #4ea674;
+  --c-on-accent: #02191b;
+  --c-surface: #023337;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --c-bg: #e9f8e7;
+  --c-text: #023337;
+  --c-muted: #2f5c49;
+  --c-accent: #247a4a;
+  --c-on-accent: #f4fbf1;
+  --c-surface: #ffffff;
+  color-scheme: light;
+}
+
+/* Same class names as before, but they now follow the active theme. */
+@theme inline {
+  --color-ink: var(--c-on-accent);
+  --color-forest: var(--c-surface);
+  --color-sage: var(--c-accent);
+  --color-mint: var(--c-muted);
+  --color-cream: var(--c-text);
+}
+
+body {
+  background: var(--c-bg);
+  color: var(--c-text);
+}
+
+::selection {
+  background: var(--c-accent);
+  color: var(--c-on-accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    transition:
+      background-color 0.25s ease,
+      border-color 0.25s ease,
+      color 0.25s ease;
+  }
+}
