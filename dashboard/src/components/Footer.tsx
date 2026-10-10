@@ -28,7 +28,7 @@ function LinkedinLogo({ size = 16 }: { size?: number }) {
   );
 }
 
-const button =
+const buttonClass =
   "inline-flex items-center gap-2 rounded-xl border border-cream/15 bg-cream/5 px-3.5 py-1.5 text-xs font-medium text-cream transition-colors hover:bg-cream/10";
 
 export default function Footer() {
@@ -38,28 +38,30 @@ export default function Footer() {
         href="https://github.com/CarlCode-dev"
         target="_blank"
         rel="noopener noreferrer"
-        className={button}
+        className={buttonClass}
       >
-        <GithubLogo />
-        GitHub
+        <GithubLogo size={16} />
+        <span>GitHub</span>
       </a>
+
       <a
         href="https://www.linkedin.com/in/carlito-dignos-b270a5439/"
         target="_blank"
         rel="noopener noreferrer"
-        className={button}
+        className={buttonClass}
       >
-        <LinkedinLogo />
-        LinkedIn
+        <LinkedinLogo size={16} />
+        <span>LinkedIn</span>
       </a>
+
       <a
         href="https://mail.google.com/mail/?view=cm&fs=1&to=dignoscarlito123@gmail.com&su=Inquiry%20from%20Verdant"
         target="_blank"
         rel="noopener noreferrer"
-        className={button}
+        className={buttonClass}
       >
-        <Mail size={16} className="text-sage" />
-        dignoscarlito123@gmail.com
+        <Mail size={16} className="text-emerald-400" />
+        <span>dignoscarlito123@gmail.com</span>
       </a>
     </footer>
   );
