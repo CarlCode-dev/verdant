@@ -15,24 +15,27 @@ export default function Hero() {
           </h1>
 
           <p className="mt-3 max-w-sm text-sm text-mint">
-            Provisioned with Terraform, orchestrated with k3s, self-healing by
-            design.
+            A real Kubernetes cluster I built on AWS using code. Kill an app on
+            it and it restarts itself in about a second. Open source, with the
+            real terminal output shown here.
           </p>
 
           <div className="mt-5 flex gap-3">
             <a
               href="https://github.com/CarlCode-dev/verdant"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="rounded-lg bg-sage px-5 py-2.5 text-[13px] font-medium text-ink"
             >
               View on GitHub
             </a>
             <a
-              href="#status"
+              href="https://github.com/CarlCode-dev/verdant#readme"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-lg border border-sage px-5 py-2.5 text-[13px] text-mint"
             >
-              See live status
+              How it works
             </a>
           </div>
         </div>
